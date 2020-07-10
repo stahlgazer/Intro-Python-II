@@ -20,7 +20,7 @@ class Product:
 products = []
 # next() ?
 def productreader(products=[]):
-    with open('products.csv', newline='') as csvfile:
+    with open('products.csv') as csvfile:
         data = csv.reader(csvfile)
         next(data)
         for row in data:
@@ -28,7 +28,7 @@ def productreader(products=[]):
             products.append(Product(row[0], row[1]))
 
 productreader(products)
-print(products)
+# print(product for product in products)
 print(products[1])
 
 
