@@ -17,8 +17,11 @@ class Product:
 # return the list with all the Product instances from the function.
 #
 # Store the instances in the "products" list, below.
+# Note that the first line of the CSV is header that describes the fields--this
+# should not be loaded into a Product object.
+# Print the list of products, 1 record per line.
 products = []
-# next() ?
+
 def productreader(products=[]):
     with open('products.csv') as csvfile:
         data = csv.reader(csvfile)
@@ -28,10 +31,6 @@ def productreader(products=[]):
             products.append(Product(row[0], row[1]))
 
 productreader(products)
-# print(product for product in products)
-print(products[1])
-
-
-# Note that the first line of the CSV is header that describes the fields--this
-# should not be loaded into a Product object.
-# Print the list of products, 1 record per line.
+print(products)
+for item in products:
+    print(item)
